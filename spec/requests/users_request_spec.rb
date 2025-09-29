@@ -17,4 +17,19 @@ RSpec.describe 'Users', type: :request do
       # end
     end
   end
+
+  describe 'POST#create' do
+    context 'when the user is registered' do
+      let(:user_attributes) { attributes_for(:user, name: 'Bruce Campbell') }
+
+      before do
+        post "/users", params: { user: user_attributes }
+        binding.pry
+      end
+
+      it 'must return 200 status code' do
+        expect(response).to have_http_status(:created)
+      end
+    end
+  end
 end

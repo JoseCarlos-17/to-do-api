@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-# app/use_cases/user/cancel_account.rb
-class User::CancelAccount # rubocop:disable Style/ClassAndModuleChildren
+class User::CancelAccount
   def initialize(user)
     @user = user
   end
