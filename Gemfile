@@ -11,7 +11,6 @@ gem 'active_model_serializers', '~> 0.10.13'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'net-smtp', '~> 0.3.1'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
-gem 'pg', '~> 1.4', '>= 1.4.3'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'sqlite3', '~> 1.4'
@@ -38,12 +37,12 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'pry', '~> 0.14.0'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.3'
+  gem 'shoulda-matchers', '~> 5.1'
   gem 'rubocop-rails', '~> 2.15', '>= 2.15.2', require: false
 end
 
 group :development do
   gem 'listen', '~> 3.3'
-  gem 'shoulda-matchers', '~> 5.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

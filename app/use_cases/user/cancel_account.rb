@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-# app/use_cases/user/cancel_account.rb
-class User::CancelAccount # rubocop:disable Style/ClassAndModuleChildren
+class User::CancelAccount
+  attr_accessor :user
+
   def initialize(user)
     @user = user
   end
@@ -15,8 +16,6 @@ class User::CancelAccount # rubocop:disable Style/ClassAndModuleChildren
   end
 
   private
-
-  attr_accessor :user
 
   def inactive_user(user)
     user.update(status: 'inactive')
