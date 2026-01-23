@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User::CancelAccount
+  attr_accessor :user
+
   def initialize(user)
     @user = user
   end
@@ -14,8 +16,6 @@ class User::CancelAccount
   end
 
   private
-
-  attr_accessor :user
 
   def inactive_user(user)
     user.update(status: 'inactive')

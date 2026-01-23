@@ -24,11 +24,14 @@ RSpec.describe 'Users', type: :request do
 
       before do
         post "/users", params: { user: user_attributes }
-        binding.pry
       end
 
       it 'must return 200 status code' do
         expect(response).to have_http_status(:created)
+      end
+
+      it 'must return user attributes' do
+        expect(json_body).to include(:name, :status)
       end
     end
   end
