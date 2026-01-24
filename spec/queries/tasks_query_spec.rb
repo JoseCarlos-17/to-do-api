@@ -44,8 +44,8 @@ RSpec.describe 'TasksQuery', type: :query_object do # rubocop:disable Metrics/Bl
     end
 
     context 'by user_name' do
-      let(:user) { create(:user, name: 'MyString1') }
-      let(:user2) { create(:user, name: 'MyString2') }
+      let(:user) { create(:user, first_name: 'MyString1') }
+      let(:user2) { create(:user, first_name: 'MyString2') }
       let(:params) { { user_name: 'MyString1' } }
       let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
       let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'to_do') }
@@ -66,8 +66,8 @@ RSpec.describe 'TasksQuery', type: :query_object do # rubocop:disable Metrics/Bl
     end
 
     context 'by multiple params applied' do
-      let(:user) { create(:user, name: 'lala') }
-      let(:user2) { create(:user, name: 'lulu') }
+      let(:user) { create(:user, first_name: 'lala') }
+      let(:user2) { create(:user, first_name: 'lulu') }
       let(:params) { { status: 'done', title: 'tle3', user_name: 'lulu' } }
       let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
       let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'done') }

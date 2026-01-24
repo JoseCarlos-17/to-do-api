@@ -2,6 +2,8 @@
 
 FactoryBot.define do
   factory :user do
-    sequence(:name) { |m| "MyString#{m}" }
+    sequence(:first_name) { |m| "MyString#{m}" }
+    sequence(:last_name) { |m| "MyString#{m}" }
+    status { "active" }
   end
 end

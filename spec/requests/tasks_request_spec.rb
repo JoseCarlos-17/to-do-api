@@ -40,8 +40,10 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
     context 'when have a filter' do # rubocop:disable Metrics/BlockLength
       context 'by status applied' do
         let(:user) { create(:user) }
-        let(:tasks1) { create_list(:task, 2, user_id: user.id, status: 'cancelled') }
-        let(:tasks2) { create_list(:task, 2, user_id: user.id, status: 'to_do') }
+        let(:tasks1) { create_list(:task, 2, user_id: user.id,
+          status: 'cancelled') }
+        let(:tasks2) { create_list(:task, 2, user_id: user.id,
+          status: 'to_do') }
 
         before do
           tasks1
@@ -58,9 +60,12 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
 
       context 'by title applied' do
         let(:user) { create(:user) }
-        let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
-        let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'to_do') }
-        let(:task3) { create(:task, title: 'title3', user_id: user.id, status: 'to_do') }
+        let(:task1) { create(:task, title: 'title1', user_id: user.id,
+          status: 'cancelled') }
+        let(:task2) { create(:task, title: 'title2', user_id: user.id,
+          status: 'to_do') }
+        let(:task3) { create(:task, title: 'title3', user_id: user.id,
+          status: 'to_do') }
 
         before do
           task1
@@ -76,11 +81,14 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
       end
 
       context 'by user_name applied' do
-        let(:user) { create(:user, name: 'MyString1') }
-        let(:user2) { create(:user, name: 'MyString2') }
-        let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
-        let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'to_do') }
-        let(:task3) { create(:task, title: 'title3', user_id: user2.id, status: 'to_do') }
+        let(:user) { create(:user, first_name: 'MyString1') }
+        let(:user2) { create(:user, first_name: 'MyString2') }
+        let(:task1) { create(:task, title: 'title1', user_id: user.id,
+          status: 'cancelled') }
+        let(:task2) { create(:task, title: 'title2', user_id: user.id,
+          status: 'to_do') }
+        let(:task3) { create(:task, title: 'title3', user_id: user2.id,
+          status: 'to_do') }
 
         before do
           task1
@@ -98,10 +106,14 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
 
       context 'by multiple params applied' do
         let(:user) { create(:user) }
-        let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
-        let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'done') }
-        let(:task3) { create(:task, title: 'title3', user_id: user.id, status: 'done') }
-        let(:task4) { create(:task, title: 'title4', user_id: user.id, status: 'done') }
+        let(:task1) { create(:task, title: 'title1', user_id: user.id,
+          status: 'cancelled') }
+        let(:task2) { create(:task, title: 'title2', user_id: user.id,
+          status: 'done') }
+        let(:task3) { create(:task, title: 'title3', user_id: user.id,
+          status: 'done') }
+        let(:task4) { create(:task, title: 'title4', user_id: user.id,
+          status: 'done') }
 
         before do
           task1
@@ -118,11 +130,14 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
       end
 
       context 'by user_name applied' do
-        let(:user) { create(:user, name: 'MyString1') }
-        let(:user2) { create(:user, name: 'MyString2') }
-        let(:task1) { create(:task, title: 'title1', user_id: user.id, status: 'cancelled') }
-        let(:task2) { create(:task, title: 'title2', user_id: user.id, status: 'to_do') }
-        let(:task3) { create(:task, title: 'title3', user_id: user2.id, status: 'to_do') }
+        let(:user) { create(:user, first_name: 'MyString1') }
+        let(:user2) { create(:user, first_name: 'MyString2') }
+        let(:task1) { create(:task, title: 'title1', user_id: user.id,
+          status: 'cancelled') }
+        let(:task2) { create(:task, title: 'title2', user_id: user.id,
+          status: 'to_do') }
+        let(:task3) { create(:task, title: 'title3', user_id: user2.id,
+          status: 'to_do') }
 
         before do
           task1
@@ -159,7 +174,8 @@ RSpec.describe 'Tasks', type: :request do # rubocop:disable Metrics/BlockLength
 
     context 'when create a task with blank values' do
       let(:user) { create(:user) }
-      let(:task_attributes) { attributes_for(:task, status: nil, title: nil, description: nil, user_id: user.id) }
+      let(:task_attributes) { attributes_for(:task, status: nil, title: nil,
+        description: nil, user_id: user.id) }
 
       before do
         task_attributes
