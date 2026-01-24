@@ -25,6 +25,6 @@ class TasksQuery
   end
 
   def by_user_name(query_list)
-    query_list.joins(:user).where('name like ?', "%#{@params[:user_name]}%")
+    query_list.joins(:user).where('first_name like ?', "%#{@params[:user_name]}%")
   end
 end

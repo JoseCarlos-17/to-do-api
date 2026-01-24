@@ -1,3 +1,3 @@
 class Users::Create::UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :status
+  attributes :id, :first_name, :status
 end

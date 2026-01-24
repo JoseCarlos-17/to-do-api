@@ -16,9 +16,17 @@ class UsersController < ApplicationController
            status: :created
   end
 
+  def update
+    user = User.find(params[:id])
+
+    user.update!(user_params)
+
+    head :no_content
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :status)
+    params.require(:user).permit(:first_name, :status, :last_name)
   end
 end
