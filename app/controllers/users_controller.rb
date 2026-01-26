@@ -24,6 +24,14 @@ class UsersController < ApplicationController
     head :no_content
   end
 
+  def show
+    user = User.find(params[:id])
+
+    render json: user,
+           serializer: Users::Show::UserSerializer,
+           status: :ok
+  end
+
   private
 
   def user_params

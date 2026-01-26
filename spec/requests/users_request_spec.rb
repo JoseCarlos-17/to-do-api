@@ -53,4 +53,20 @@ RSpec.describe 'Users', type: :request do
       end
     end
   end
+
+  describe 'GET#show' do
+    let(:user) { create(:user) }
+
+    before do
+      get "/users/#{user.id}"
+    end
+
+    it 'must return 204 status code' do
+      expect(response).to have_http_status(:ok)
+    end
+
+    it 'must return user attributes' do
+      expect(json_body).to include(:id, :first_name, :status)
+    end
+  end
 end
