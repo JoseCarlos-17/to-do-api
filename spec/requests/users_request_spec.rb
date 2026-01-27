@@ -21,8 +21,9 @@ RSpec.describe 'Users', type: :request do
 
   describe 'POST#create' do
     context 'when the user is registered' do
+      let(:profile_photo) { fixture_file_upload('app/assets/cover.png', 'image/png') }
       let(:user_attributes) { attributes_for(:user, first_name: 'Bruce',
-        last_name: 'Campbell') }
+        last_name: 'Campbell', profile_image: profile_photo) }
 
       before do
         post "/users", params: { user: user_attributes }
@@ -33,7 +34,8 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'must return user attributes' do
-        expect(json_body).to include(:first_name, :status)
+        expect(json_body).to include(:first_name, :status, :last_name,
+                                     :profile_image)
       end
     end
   end
@@ -66,7 +68,8 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'must return user attributes' do
-      expect(json_body).to include(:id, :first_name, :status)
+      expect(json_body).to include(:first_name, :status, :last_name,
+                                   :profile_image)
     end
   end
 end

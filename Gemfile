@@ -14,6 +14,8 @@ gem 'pagy', '~> 5.10', '>= 5.10.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.1.6', '>= 6.1.6.1'
 gem 'sqlite3', '~> 1.4'
+gem 'activestorage', '~> 6.1', '>= 6.1.4.1'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -24,7 +26,7 @@ gem 'sqlite3', '~> 1.4'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 
