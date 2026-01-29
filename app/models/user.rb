@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  validates :first_name, :last_name, presence: true
+
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+
   def profile_image_url
     if self.profile_image.attached?
       "#{ENV['BASE_URL']}#{rails_blob_path(self.profile_image, only_path: true)}"
