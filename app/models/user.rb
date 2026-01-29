@@ -11,7 +11,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
 
-  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, presence: true, uniqueness: true,
+                    format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def profile_image_url
     if self.profile_image.attached?
