@@ -35,7 +35,7 @@ RSpec.describe 'Users', type: :request do
 
       it 'must return user attributes' do
         expect(json_body).to include(:first_name, :status, :last_name,
-                                     :profile_image)
+                                     :profile_image, :email)
       end
     end
   end
@@ -69,7 +69,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'must return user attributes' do
       expect(json_body).to include(:first_name, :status, :last_name,
-                                   :profile_image)
+                                   :profile_image, :email)
     end
   end
 end
